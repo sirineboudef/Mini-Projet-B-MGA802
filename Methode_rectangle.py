@@ -19,22 +19,20 @@ def integral_rectangle(a: float, b: float, p1: float, p2: float, p3: float, p4: 
         total += f(x, p1, p2, p3, p4) * h
         x += h
     return total
-def integral_rectangle(a: float, b: float, p1: float, p2: float, p3: float, p4: float, n: int = 10):
-    """Intégration numérique par la méthode des rectangles sur n segments."""
-    h = (b - a) / n  # largeur d'un segment
-    total = 0
-    x = a
-    for _ in range(n):
-        total += f(x, p1, p2, p3, p4) * h
-        x += h
-    return total
-
 
 def erreur_integration(a: float, b: float, p1: float, p2: float, p3: float, p4: float, n: int = 10):
     """Erreur absolue entre l'intégrale analytique et numérique."""
     exact = integral_analytique(a, b, p1, p2, p3, p4)
     approx = integral_rectangle(a, b, p1, p2, p3, p4, n)
     return abs(exact - approx)
+
+def tester_convergence(a: float, b: float, p1: float, p2: float, p3: float, p4: float):
+    """Affiche l'erreur pour des valeurs croissantes de n."""
+    print("\nTest de convergence :")
+    for n in [10, 100, 1000, 10000, 100000]:
+        err = erreur_integration(a, b, p1, p2, p3, p4, n)
+        print(f"n={n:<7} erreur={err:.10f}")
+
 
 # valeur fixe pour le coefficient du polynome et limites d'intégration
 p1, p2, p3, p4 = 26, 36, 12, 7  # coefficients du polynôme
@@ -48,7 +46,6 @@ err = abs(exacte - approx)
 print(f"Intégrale analytique   : {exacte}")
 print(f"Intégrale numérique    : {approx}")
 print(f"Erreur absolue (n={n}): {err}")
-
 
 
 
