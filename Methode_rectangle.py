@@ -19,6 +19,27 @@ def integral_rectangle(a: float, b: float, p1: float, p2: float, p3: float, p4: 
         total += f(x, p1, p2, p3, p4) * h
         x += h
     return total
+def integral_rectangle(a: float, b: float, p1: float, p2: float, p3: float, p4: float, n: int = 10):
+    """Intégration numérique par la méthode des rectangles sur n segments."""
+    h = (b - a) / n  # largeur d'un segment
+    total = 0
+    x = a
+    for _ in range(n):
+        total += f(x, p1, p2, p3, p4) * h
+        x += h
+    return total
+
+
+def erreur_integration(a: float, b: float, p1: float, p2: float, p3: float, p4: float, n: int = 10):
+    """Erreur absolue entre l'intégrale analytique et numérique."""
+    exact = integral_analytique(a, b, p1, p2, p3, p4)
+    approx = integral_rectangle(a, b, p1, p2, p3, p4, n)
+    return abs(exact - approx)
+
+
+
+
+
 
 
 
