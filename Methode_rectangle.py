@@ -36,6 +36,18 @@ def erreur_integration(a: float, b: float, p1: float, p2: float, p3: float, p4: 
     approx = integral_rectangle(a, b, p1, p2, p3, p4, n)
     return abs(exact - approx)
 
+# valeur fixe pour le coefficient du polynome et limites d'intégration
+p1, p2, p3, p4 = 26, 36, 12, 7  # coefficients du polynôme
+a, b = -50, 50  # bornes de l'intégrale
+n = 10  # nombre de segments pour la méthode des rectangles
+
+exacte = integral_analytique(a, b, p1, p2, p3, p4)
+approx = integral_rectangle(a, b, p1, p2, p3, p4, n)
+err = abs(exacte - approx)
+
+print(f"Intégrale analytique   : {exacte}")
+print(f"Intégrale numérique    : {approx}")
+print(f"Erreur absolue (n={n}): {err}")
 
 
 
