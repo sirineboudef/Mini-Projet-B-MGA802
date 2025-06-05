@@ -41,7 +41,7 @@ def mesurer_temps_execution(a, b, p1, p2, p3, p4, n):
     print(f"\nTemps d'exécution pour n={n} : {temps:.6f} secondes")
 
 
-# valeur fixe pour le coefficient du polynome et limites d'intégration
+# Valeur fixe pour le coefficient du polynome et limites d'intégration
 p1, p2, p3, p4 = 26, 36, 12, 7  # coefficients du polynôme
 a, b = -50, 50  # bornes de l'intégrale
 n = 10  # nombre de segments pour la méthode des rectangles
