@@ -1,3 +1,5 @@
+import timeit
+
 def f(x: float, p1: float, p2: float, p3: float, p4: float):
     """Fonction polynomiale du troisième degré."""
     return p1 + p2 * x + p3 * x ** 2 + p4 * x ** 3
@@ -33,6 +35,11 @@ def tester_convergence(a: float, b: float, p1: float, p2: float, p3: float, p4: 
         err = erreur_integration(a, b, p1, p2, p3, p4, n)
         print(f"n={n:<7} erreur={err:.10f}")
 
+def mesurer_temps_execution(a, b, p1, p2, p3, p4, n):
+    """Mesure le temps d'exécution de l'intégration numérique."""
+    temps = timeit.timeit(lambda: integral_rectangle(a, b, p1, p2, p3, p4, n), number=1)
+    print(f"\nTemps d'exécution pour n={n} : {temps:.6f} secondes")
+
 
 # valeur fixe pour le coefficient du polynome et limites d'intégration
 p1, p2, p3, p4 = 26, 36, 12, 7  # coefficients du polynôme
@@ -47,6 +54,8 @@ print(f"Intégrale analytique   : {exacte}")
 print(f"Intégrale numérique    : {approx}")
 print(f"Erreur absolue (n={n}): {err}")
 
+tester_convergence(a, b, p1, p2, p3, p4)
+mesurer_temps_execution(a, b, p1, p2, p3, p4, n)
 
 
 
