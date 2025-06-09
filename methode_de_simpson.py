@@ -1,4 +1,4 @@
-def integral_simpson_python(f, a, b, n):
+def integrale_simpson_python(f, a, b, n):
 
     if n % 2 != 0:
         n += 1  # n doit obligatoirement être pair
