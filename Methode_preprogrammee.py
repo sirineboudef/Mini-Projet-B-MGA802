@@ -16,10 +16,11 @@ def integrate_simpson_built_in(a: float, b: float, p1: float, p2: float, p3: flo
     x = np.linspace(a, b, num=n)
     y = f(x, p1, p2, p3, p4)
     return simpson(y, x=None, dx=1.0, axis=-1)
+
 # Valeurs fixes pour les coefficients du polynome et limites d'intégration
 p1, p2, p3, p4 = 26, 36, 12, 7  # coefficients du polynôme
 a, b = -50, 50  # bornes de l'intégrale
-n = 11  # nombre de segments pour la méthode des rectangles
+n = 11  # nombre de points pour les méthodes
 
 # Test du module
 print(integrate_trapezoid_built_in(a, b, p1, p2, p3, p4, n))
