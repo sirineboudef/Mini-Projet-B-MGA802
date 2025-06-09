@@ -1,14 +1,6 @@
 import numpy as np
-import timeit
 
-# 1. Fonction analytique
-def integral_analytique(a: float, b: float, p1: float, p2: float, p3: float, p4: float):
-    """Intégrale analytique de f(x) entre a et b"""
-    term1 = p1 * (b - a)
-    term2 = p2 * (b**2 - a**2) / 2
-    term3 = p3 * (b**3 - a**3) / 3
-    term4 = p4 * (b**4 - a**4) / 4
-    return term1 + term2 + term3 + term4
+import timeit
 
 # 2. Fonction polynomiale vectorisée
 def f_vect(x: np.ndarray, p1: float, p2: float, p3: float, p4: float) -> np.ndarray:
@@ -18,6 +10,7 @@ def f_vect(x: np.ndarray, p1: float, p2: float, p3: float, p4: float) -> np.ndar
 # 3. Intégration par rectangles centrés (vectorisée)
 def integral_rectangle(a: float, b: float, p1: float, p2: float, p3: float, p4: float, n: int = 10) -> float:
     """Méthode des rectangles centrée vectorisée"""
+
     h = (b - a) / n
     x = np.linspace(a + h/2, b - h/2, n)
     y = f_vect(x, p1, p2, p3, p4)
