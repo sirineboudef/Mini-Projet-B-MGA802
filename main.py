@@ -28,3 +28,31 @@ print(f"Résultat avec Python: {resultat_python:.6f}")
 print(f"Résultat avec NumPy: {resultat_numpy:.6f}")
 
 
+# 2eme question
+
+# Dictionnaire des méthodes (implémentées par mes collègues)
+methodes = {
+    "Rectangles avec Python": integrale_rectancle_python,
+    "Rectangles avec NumPy": integrale_rectancle_numpy,
+    "Trapèzes avec Python": integrale_trapeze_python,
+    "Trapèzes avec NumPy": integrale_trapeze_python,
+    "Simpson avec Python": simpson_python,
+    "Simpson avec NumPy": simpson_numpy
+}
+
+# Initialisation des dictionnaires pour inclure les valeurs d'erreurs et temps
+erreurs = {}
+temps = {}
+
+for nom, methode in methodes.items():
+    # Calcul du temps
+    t = timeit.timeit(lambda: methodes(f, a, b, n), number=100)
+
+    # Calcul de l'erreur
+    resultat = methodes(f, a, b, n)
+    e = abs(resultat - exact)
+
+    erreurs[nom] = e
+    temps[nom] = t * 1000  # en ms
+
+    print(f"{nom}: Erreur = {e:.2e}, Temps = {temps[nom]:.2f} ms")
