@@ -13,7 +13,11 @@ def integrale_rectangle_python(a: float, b: float, p1: float, p2: float, p3: flo
         valeure_integrale += f(x, p1, p2, p3, p4)
     return pas * valeure_integrale
 
-# Fonction pour calculer l'erreur absolu de l'integration
+# Fonction qui calcul l'erreur de l'integration numerique
+def erreur_absolue(I_exact, I_approx):
+    return abs(I_exact - I_approx)
+
+# Fonction pour calculer l'erreur absolu de l'integration et qui prend le nombre de segment en argument
 def erreur_integration(a: float, b: float, p1: float, p2: float, p3: float, p4: float, n: int = 10):
 
     exact = integrale_analytique(a, b, p1, p2, p3, p4)
@@ -43,11 +47,13 @@ n = 10  # nombre de segments pour la méthode des rectangles
 
 valeur_exacte = integrale_analytique(a, b, p1, p2, p3, p4)
 valeur_approx = integrale_rectangle_python(a, b, p1, p2, p3, p4, n)
-erreur = erreur_integration(a, b, p1, p2, p3, p4, n)
+erreur = erreur_absolue(valeur_exacte,valeur_approx)
+erreur_n = erreur_integration(a, b, p1, p2, p3, p4, n)
 
 print(f"Intégrale analytique   : {valeur_exacte}")
 print(f"Intégrale numérique    : {valeur_approx}")
-print(f"Erreur absolue (n={n}): {erreur}")
+print(f"Erreur absolue    : {erreur}")
+print(f"Erreur d'integration avec argument n (n={n}): {erreur_n}")
 
 tester_convergence(a, b, p1, p2, p3, p4)
 mesurer_temps_execution(a, b, p1, p2, p3, p4, n)
