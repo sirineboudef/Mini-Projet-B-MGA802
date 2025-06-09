@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08a8da23-4a39-4852-a68a-e9b76c7d26a8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="08a8da23-4a39-4852-a68a-e9b76c7d26a8" name="Changes" comment="Ajout méthode trapezoid">
       <change beforePath="$PROJECT_DIR$/Methode_preprogrammee.py" beforeDir="false" afterPath="$PROJECT_DIR$/Methode_preprogrammee.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +77,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749151868218</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ajout méthode trapezoid">
+      <option name="closed" value="true" />
+      <created>1749511951037</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749511951037</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,6 +113,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit: creation branche Paulin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit: creation branche Paulin" />
+    <MESSAGE value="Ajout méthode trapezoid" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout méthode trapezoid" />
   </component>
 </project>
