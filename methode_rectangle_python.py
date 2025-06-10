@@ -11,13 +11,12 @@ def integral_analytique(a: float, b: float, p1: float, p2: float, p3: float, p4:
     return term1 + term2 + term3 + term4
 
 def integrale_rectangle_python(a: float, b: float, p1: float, p2: float, p3: float, p4: float, n: int = 10):
-    """Intégration numérique par la méthode des rectangles sur n segments."""
-    h = (b - a) / n  # largeur d'un segment
+    """Intégration numérique par la méthode des rectangles (milieu) sur n segments."""
+    h = (b - a) / n
     total = 0
-    x = a
-    for _ in range(n):
-        total += f(x, p1, p2, p3, p4) * h
-        x += h
+    for i in range(n):
+        xi = a + (i + 0.5) * h  # Point milieu de chaque sous-intervalle
+        total += f(xi, p1, p2, p3, p4) * h
     return total
 
 def erreur_integration(a: float, b: float, p1: float, p2: float, p3: float, p4: float, n: int = 10):

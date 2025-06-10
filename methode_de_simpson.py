@@ -8,6 +8,7 @@ from methode_rectangle_python import integrale_rectangle_python
 from Methode_rectangle_Numpy import integrale_rectangle_numpy
 from methode_analytique import integrale_analytique
 from polynome import f  # Fonction scalaire importée
+from methode_trapeze import integrale_trapeze_python, integrale_trapeze_numpy
 
 # Définition des coefficients du polynôme
 p1, p2, p3, p4 = 26, 36, 12, 7
@@ -57,8 +58,10 @@ print(f"Résultat avec Simpson NumPy : {resultat_numpy:.6f}")
 methods = [
     ("Rectangle Python", integrale_rectangle_python),
     ("Simpson Python", integrale_simpson_python),
+    ("Trapeze Python", integrale_trapeze_python),
     ("Rectangle NumPy", integrale_rectangle_numpy),
     ("Simpson NumPy", integrale_simpson_numpy),
+    ("Trapeze NumPy", integrale_trapeze_numpy),
 ]
 
 I_exact = integrale_analytique(a, b, p1, p2, p3, p4)
@@ -82,7 +85,7 @@ n_values = [10, 20, 40, 80, 160, 320, 640, 1280]
 # Listes d’erreurs
 errors_rectangle = []
 errors_simpson = []
-
+errors_trapeze = []
 # Valeur exacte
 I_exact = integrale_analytique(a, b, p1, p2, p3, p4)
 
@@ -90,17 +93,18 @@ I_exact = integrale_analytique(a, b, p1, p2, p3, p4)
 for n in n_values:
     I_rect = integrale_rectangle_python(a, b, p1, p2, p3, p4, n)
     I_simp = integrale_simpson_python(a, b, p1, p2, p3, p4, n)
-
+    I_trap = integrale_trapeze_python (a, b, p1, p2, p3, p4, n)
     err_rect = abs(I_rect - I_exact)
     err_simp = abs(I_simp - I_exact)
-
+    err_trap = abs(I_trap - I_exact)
     errors_rectangle.append(err_rect)
     errors_simpson.append(err_simp)
-
+    errors_trapeze.append(err_trap)
 # Tracé avec échelle linéaire
 plt.figure(figsize=(8, 5))
 plt.plot(n_values, errors_rectangle, marker='o', label='Rectangle (Python)')
 plt.plot(n_values, errors_simpson, marker='s', label='Simpson (Python)')
+plt.plot(n_values, errors_trapeze, marker='x', label='Trapeze (Python)')
 plt.xlabel("Nombre de segments (n)")
 plt.ylabel("Erreur absolue")
 plt.title("Convergence des méthodes numériques (échelle linéaire)")
@@ -114,21 +118,25 @@ n_values = [10, 20, 40, 80, 160, 320, 640, 1280]
 
 errors_rectangle_numpy = []
 errors_simpson_numpy = []
-
+errors_trapeze_numpy = []
 for n in n_values:
     I_rect_np = integrale_rectangle_numpy(a, b, p1, p2, p3, p4, n)
     I_simp_np = integrale_simpson_numpy(a, b, p1, p2, p3, p4, n)
+    I_trap_np = integrale_trapeze_numpy(a, b, p1, p2, p3, p4, n)
 
     err_rect_np = abs(I_rect_np - I_exact)
     err_simp_np = abs(I_simp_np - I_exact)
+    err_trap_np = abs(I_simp_np - I_exact)
 
     errors_rectangle_numpy.append(err_rect_np)
     errors_simpson_numpy.append(err_simp_np)
+    errors_trapeze_numpy.append(err_trap_np)
 
 # Affichage du graphique NumPy (échelle linéaire)
 plt.figure(figsize=(8, 5))
 plt.plot(n_values, errors_rectangle_numpy, marker='o', label='Rectangle (NumPy)')
 plt.plot(n_values, errors_simpson_numpy, marker='s', label='Simpson (NumPy)')
+plt.plot(n_values, errors_trapeze_numpy, marker='x', label='Trapeze (NumPy)')
 plt.xlabel("Nombre de segments (n)")
 plt.ylabel("Erreur absolue")
 plt.title("Convergence des méthodes numériques avec NumPy (échelle linéaire)")
@@ -146,8 +154,10 @@ times_rectangle_python = []
 times_rectangle_numpy = []
 times_simpson_python = []
 times_simpson_numpy = []
+times_trapeze_python = []
+times_trapeze_numpy = []
 
-# Boucle de mesure
+# Boucle de mesure du temps
 for n in n_values:
     # Rectangle Python
     start_rp = time.perf_counter()
@@ -173,6 +183,18 @@ for n in n_values:
     end_sn = time.perf_counter()
     times_simpson_numpy.append(end_sn - start_sn)
 
+    # Trapeze Python
+    start_sp = time.perf_counter()
+    integrale_trapeze_python(a, b, p1, p2, p3, p4, n)
+    end_sp = time.perf_counter()
+    times_trapeze_python.append(end_sp - start_sp)
+
+    # Trapeze NumPy
+    start_sn = time.perf_counter()
+    integrale_trapeze_numpy(a, b, p1, p2, p3, p4, n)
+    end_sn = time.perf_counter()
+    times_trapeze_numpy.append(end_sn - start_sn)
+
 # Tracé du graphique de comparaison des temps
 plt.figure(figsize=(10, 6))
 
@@ -180,6 +202,9 @@ plt.plot(n_values, times_rectangle_python, marker='o', label="Rectangle (Python)
 plt.plot(n_values, times_rectangle_numpy, marker='o', linestyle='--', label="Rectangle (NumPy)")
 plt.plot(n_values, times_simpson_python, marker='s', label="Simpson (Python)")
 plt.plot(n_values, times_simpson_numpy, marker='s', linestyle='--', label="Simpson (NumPy)")
+plt.plot(n_values, times_trapeze_python, marker='x', label="Trapeze (Python)")
+plt.plot(n_values, times_trapeze_numpy, marker='x', linestyle='--', label="Trapeze (NumPy)")
+
 
 plt.xlabel("Nombre de segments (n)")
 plt.ylabel("Temps d'exécution (secondes)")
