@@ -116,3 +116,28 @@ for nombre_segments in liste_nombre_segments:
 
 
 
+#génération du graphique de convergence
+plt.figure()
+plt.plot(liste_nombre_segments, liste_erreurs_trapeze_python, label="Trapèze Python (erreur)")
+plt.plot(liste_nombre_segments, liste_erreurs_trapeze_numpy, label="Trapèze NumPy (erreur)")
+plt.xlabel("Nombre de segments")
+plt.ylabel("Erreur absolue")
+plt.title("Convergence de la méthode des trapèzes")
+plt.legend()
+plt.grid(True)
+plt.xscale("log")
+plt.yscale("log")
+plt.show()
+
+#génération du graphique des temps de calcul
+plt.figure()
+plt.plot(liste_nombre_segments, liste_temps_trapeze_python, label="Trapèze Python (temps)")
+plt.plot(liste_nombre_segments, liste_temps_trapeze_numpy, label="Trapèze NumPy (temps)")
+plt.xlabel("Nombre de segments")
+plt.ylabel("Temps de calcul (secondes)")
+plt.title("Temps d'exécution de la méthode des trapèzes")
+plt.legend()
+plt.grid(True)
+plt.xscale("log")
+plt.yscale("log")
+plt.show()
