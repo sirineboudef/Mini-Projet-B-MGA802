@@ -1,7 +1,7 @@
 # Importations des modules et packages necessaires
 import timeit
 from methode_analytique import integrale_analytique
-from methode_de_rectangle import integrale_rectangle_python
+from Methode_rectangle import integrale_rectangle_python
 from polynome import f
 
 # Fonction d'integration par la methode des rectangles

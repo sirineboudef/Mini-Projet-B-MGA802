@@ -8,7 +8,7 @@ def f_vect(x: np.ndarray, p1: float, p2: float, p3: float, p4: float) -> np.ndar
     return p1 + p2 * x + p3 * x**2 + p4 * x**3
 
 # Intégration par rectangles centrés (vectorisée)
-def integral_rectangle(a: float, b: float, p1: float, p2: float, p3: float, p4: float, n: int = 10) -> float:
+def integrale_rectangle_numpy(a: float, b: float, p1: float, p2: float, p3: float, p4: float, n: int = 10) -> float:
     h = (b - a) / n
     x = np.linspace(a + h/2, b - h/2, n)
     y = f_vect(x, p1, p2, p3, p4)
@@ -16,7 +16,7 @@ def integral_rectangle(a: float, b: float, p1: float, p2: float, p3: float, p4: 
 
 # Mesure du temps d'exécution
 def mesurer_temps(a, b, p1, p2, p3, p4, n):
-    temps = timeit.timeit(lambda: integral_rectangle(a, b, p1, p2, p3, p4, n), number=1)
+    temps = timeit.timeit(lambda: integrale_rectangle_numpy(a, b, p1, p2, p3, p4, n), number=1)
     print(f"\n Temps d'exécution rectangle vectorisé, n={n}: {temps:.8f} s")
 
 # PARAMÈTRES
@@ -26,7 +26,7 @@ n = 10                     # Nombre de sous-intervalles
 
 # CALCULS
 int_exacte = integrale_analytique(a, b, p1, p2, p3, p4)
-int_centre = integral_rectangle(a, b, p1, p2, p3, p4, n)
+int_centre = integrale_rectangle_numpy(a, b, p1, p2, p3, p4, n)
 erreur = abs(int_centre - int_exacte)
 
 # AFFICHAGE
