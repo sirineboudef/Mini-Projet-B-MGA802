@@ -15,4 +15,4 @@ a, b = -50, 50  # bornes de l'intégrale
 n = 11  # nombre de points pour les méthodes
 
 # Test de la fonction
-print(integrale_simpson_scipy(a, b, p1, p2, p3, p4, n))
+# print(integrale_simpson_scipy(a, b, p1, p2, p3, p4, n))

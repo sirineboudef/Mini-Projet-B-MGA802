@@ -6,7 +6,7 @@ from polynome import f
 from methodes_des_trapezes import*
 from Methode_rectangle_Numpy import*
 from methode_de_simpson import*
-from simpson_scipy import*
+from methode_simpson_scipy import*
 
 # Definition des bornes a et b
 a, b = -50, 50  # Bornes
@@ -25,8 +25,12 @@ def f_vectorized(x):
 
 resultat_numpy= integrale_simpson_numpy(f_vectorized, a, b, n)
 
+# SciPy
+resultat_scipy= integrale_simpson_scipy(a, b,26, 36, 12, 7, n)
+
 print(f"Résultat avec Python: {resultat_python:.6f}")
 print(f"Résultat avec NumPy: {resultat_numpy:.6f}")
+print(f"Résultat avec SciPy: {resultat_scipy:.6f}")
 
 
 # 2eme question
