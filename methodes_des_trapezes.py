@@ -3,6 +3,7 @@ from  methode_rectangle_python import*
 import time
 import matplotlib.pyplot as plt
 from Methode_rectangle_Numpy import*
+from integrale_trapeze_scipy import*
 # définition des coefficients du polynôme à 3 degrès
 coeffs = [26, 36, 12, 7]
 
@@ -51,6 +52,11 @@ def comparer_methodes(coeffs, a, b, n):
     resultat_trapeze_numpy = integrale_trapeze_numpy(coeffs, a, b, n)
     fin_trapeze_numpy = time.time()
 
+    # Calcul du temps d'execution de la methodes trapèzes avec numpy
+    debut_trapeze_scipy = time.time()
+    resultat_trapeze_scipy = integrate_trapezoid_built_in(a, b,coeffs[0],coeffs[1],coeffs[2],coeffs[3] ,n)
+    fin_trapeze_scipy = time.time()
+
     # Calcul du temps d'execution de la methodes des rectangles avec python de base
     debut_rectangle_python = time.time()
     resultat_rectangle_python = integrale_rectangle_python(coeffs, a, b, n)
@@ -67,6 +73,7 @@ def comparer_methodes(coeffs, a, b, n):
     # calcul des erreurs de differentes methodes
     erreur_trapeze_python = abs(resultat_trapeze_python - resultat_exact)
     erreur_trapeze_numpy = abs(resultat_trapeze_numpy - resultat_exact)
+    erreur_trapeze_scipy = abs(resultat_trapeze_scipy - resultat_exact)
     erreur_rectangle_python = abs(resultat_rectangle_python - resultat_exact)
     erreur_rectangle_numpy = abs(resultat_rectangle_numpy - resultat_exact)
 
@@ -74,6 +81,7 @@ def comparer_methodes(coeffs, a, b, n):
     print("\n--- Comparaison des méthodes ---")
     print(f"Trapèzes (python de base)       : Résultat = {resultat_trapeze_python:.6f}, Erreur = {erreur_trapeze_python:.2e}, Temps = {fin_trapeze_python - debut_trapeze_python:.6f} s")
     print(f"Trapèzes (numpy)                : Résultat = {resultat_trapeze_numpy:.6f}, Erreur = {erreur_trapeze_numpy:.2e}, Temps = {fin_trapeze_numpy - debut_trapeze_numpy:.6f} s")
+    print(f"Trapèzes (numpy)                : Résultat = {resultat_trapeze_scipy:.6f}, Erreur = {erreur_trapeze_scipy:.2e}, Temps = {fin_trapeze_scipy - debut_trapeze_scipy:.6f} s")
     print(f"Rectangles (python de base)     : Résultat = {resultat_rectangle_python:.6f}, Erreur = {erreur_rectangle_python:.2e}, Temps = {fin_rectangle_python - debut_rectangle_python:.6f} s")
     print(f"Rectangles (numpy)              : Résultat = {resultat_rectangle_numpy:.6f}, Erreur = {erreur_rectangle_numpy:.2e}, Temps = {fin_rectangle_numpy - debut_rectangle_numpy:.6f} s")
     print(f"Valeur exacte                   : {resultat_exact:.6f}")
@@ -84,8 +92,10 @@ liste_nombre_segments = [10, 50, 100, 500, 1000, 1500, 2000, 2500, 5000, 10000]
 # Stockage des erreurs et du temps de calcul
 liste_erreurs_trapeze_python = []
 liste_erreurs_trapeze_numpy = []
+liste_erreurs_trapeze_scipy = []
 liste_temps_trapeze_python = []
 liste_temps_trapeze_numpy = []
+liste_temps_trapeze_scipy = []
 
 # Calcul de la valeur exacte de l'intégrale
 valeur_integrale_exacte = integrale_analytique(a, b, 26, 36, 12, 7)
@@ -112,12 +122,23 @@ for nombre_segments in liste_nombre_segments:
     liste_temps_trapeze_numpy.append(temps_execution_numpy)
     liste_erreurs_trapeze_numpy.append(erreur_numpy)
 
+    # méthode trapèze avec scipy
+    debut_temps_scipy = time.time()
+    valeur_approchee_scipy = integrate_trapezoid_built_in(a, b,coeffs[0],coeffs[1],coeffs[2],coeffs[3] ,nombre_segments)
+    fin_temps_scipy = time.time()
+    temps_execution_scipy = fin_temps_scipy - debut_temps_scipy
+    erreur_scipy = abs(valeur_approchee_scipy - valeur_integrale_exacte)
+
+    liste_temps_trapeze_scipy.append(temps_execution_scipy)
+    liste_erreurs_trapeze_scipy.append(erreur_scipy)
+
 
 
 #génération du graphique de convergence
 plt.figure()
 plt.plot(liste_nombre_segments, liste_erreurs_trapeze_python, label="Trapèze Python (erreur)")
 plt.plot(liste_nombre_segments, liste_erreurs_trapeze_numpy, label="Trapèze NumPy (erreur)")
+plt.plot(liste_nombre_segments, liste_erreurs_trapeze_scipy, label="Trapèze SciPy (erreur)")
 plt.xlabel("Nombre de segments")
 plt.ylabel("Erreur absolue")
 plt.title("Convergence de la méthode des trapèzes")
@@ -131,6 +152,7 @@ plt.show()
 plt.figure()
 plt.plot(liste_nombre_segments, liste_temps_trapeze_python, label="Trapèze Python (temps)")
 plt.plot(liste_nombre_segments, liste_temps_trapeze_numpy, label="Trapèze NumPy (temps)")
+plt.plot(liste_nombre_segments, liste_temps_trapeze_scipy, label="Trapèze SciPy (temps)")
 plt.xlabel("Nombre de segments")
 plt.ylabel("Temps de calcul (secondes)")
 plt.title("Temps d'exécution de la méthode des trapèzes")
