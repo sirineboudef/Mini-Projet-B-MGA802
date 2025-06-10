@@ -46,10 +46,10 @@ temps = {}
 
 for nom, methode in methodes.items():
     # Calcul du temps
-    t = timeit.timeit(lambda: methodes(f, a, b, n), number=100)
+    t = timeit.timeit(lambda: methode(f, a, b, n), number=100)
 
     # Calcul de l'erreur
-    resultat = methodes(f, a, b, n)
+    resultat = methode(f, a, b, n)
     e = abs(resultat - exact)
 
     erreurs[nom] = e
