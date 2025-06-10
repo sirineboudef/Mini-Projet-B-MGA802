@@ -1,17 +1,15 @@
 import numpy as np
-from  Methodes_rectangle import integral_rectangle, integral_analytique
+from  methode_rectangle_python import*
 import time
 import matplotlib.pyplot as plt
-
+from Methode_rectangle_Numpy import*
 # définition des coefficients du polynôme à 3 degrès
-coeffs = [2, -3, 0, 5]
+coeffs = [26, 36, 12, 7]
 
-# définition des bornes de l'intervalle
-a = 1
-b = 4
+# valeur fixe pour le coefficient du polynome et limites d'intégration
 
-# définition du nombre de segments
-n = 100
+a, b = -50, 50  # bornes de l'intégrale
+n = 10  # nombre de segments pour la méthode des rectangles
 
 # fonction pour évaluer le polynôme avec python basique
 def integrale_trapeze_python(coeffs, a, b, n):
@@ -55,16 +53,16 @@ def comparer_methodes(coeffs, a, b, n):
 
     # Calcul du temps d'execution de la methodes des rectangles avec python de base
     debut_rectangle_python = time.time()
-    resultat_rectangle_python = integral_analytique(coeffs, a, b, n)
+    resultat_rectangle_python = integrale_rectangle_python(coeffs, a, b, n)
     fin_rectangle_python = time.time()
 
     # Calcul du temps d'execution de la methodes des rectangles avec numpy
     debut_rectangle_numpy = time.time()
-    resultat_rectangle_numpy = integral_rectangle(coeffs, a, b, n)
+    resultat_rectangle_numpy = integrale_rectangle_numpy(coeffs, a, b, n)
     fin_rectangle_numpy = time.time()
 
     # calcul de la valeur exacte de l'integral
-    resultat_exact = integral_analytique(a, b)
+    resultat_exact = integrale_analytique(a, b, 26, 36, 12, 7)
 
     # calcul des erreurs de differentes methodes
     erreur_trapeze_python = abs(resultat_trapeze_python - resultat_exact)
@@ -90,7 +88,7 @@ liste_temps_trapeze_python = []
 liste_temps_trapeze_numpy = []
 
 # Calcul de la valeur exacte de l'intégrale
-valeur_integrale_exacte = integral_analytique(a, b)
+valeur_integrale_exacte = integrale_analytique(a, b, 26, 36, 12, 7)
 
 #évaluation
 for nombre_segments in liste_nombre_segments:

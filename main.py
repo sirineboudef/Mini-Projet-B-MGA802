@@ -3,6 +3,10 @@ import numpy as np
 import timeit
 import matplotlib.pyplot as plt
 from polynome import f
+from methodes_des_trapezes import*
+from Methode_rectangle_Numpy import*
+from methode_de_simpson import*
+from simpson_scipy import*
 
 # Definition des bornes a et b
 a, b = -50, 50  # Bornes
@@ -32,11 +36,11 @@ methodes = {
     "Rectangles avec Python": integrale_rectangle_python,
     "Rectangles avec NumPy": integrale_rectangle_numpy,
     "Trapèzes avec Python": integrale_trapeze_python,
-    "Trapèzes avec NumPy": integrale_trapeze_python,
+    "Trapèzes avec NumPy": integrale_trapeze_numpy,
     "Trapèzes avec SciPy": integrale_trapeze_scipy,
-    "Simpson avec Python": simpson_python,
-    "Simpson avec NumPy": simpson_numpy,
-    "Simpson avec SciPy": simpson_scipy
+    "Simpson avec Python": integrale_simpson_python,
+    "Simpson avec NumPy": integrale_simpson_numpy,
+    "Simpson avec SciPy": integrale_simpson_scipy
 }
 
 # Initialisation des dictionnaires pour inclure les valeurs d'erreurs et temps
@@ -45,10 +49,10 @@ temps = {}
 
 for nom, methode in methodes.items():
     # Calcul du temps
-    t = timeit.timeit(lambda: methodes(f, a, b, n), number=100)
+    t = timeit.timeit(lambda: methode(f, a, b, n), number=100)
 
     # Calcul de l'erreur
-    resultat = methodes(f, a, b, n)
+    resultat = methode(f, a, b, n)
     e = abs(resultat - exact)
 
     erreurs[nom] = e
