@@ -1,5 +1,6 @@
+import numpy as np
 from scipy.integrate import trapezoid
-from Methode_rectangle import f
+from polynome import f
 
 def integrate_trapezoid_built_in(a: float, b: float, p1: float, p2: float, p3: float, p4: float, n: int = 10):
     """Intégration numérique par la méthode des trapèzes sur n segments. Version pré-programmée SciPy"""

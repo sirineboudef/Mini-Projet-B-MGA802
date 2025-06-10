@@ -7,7 +7,7 @@ p1, p2, p3, p4 = 26, 36, 12, 7
 
 
 # Fonction polynomiale
-def f(x: float):
+def f_bis(x: float):
     return p1 + p2 * x + p3 * x ** 2 + p4 * x ** 3
 
 
@@ -22,14 +22,14 @@ def integrale_simpson_python(f, a, b, n):
         n += 1  # n doit être pair
 
     h = (b - a) / n
-    total = f(a) + f(b)  # Termes aux bornes
+    total = f_bis(a) + f_bis(b)  # Termes aux bornes
 
     for i in range(1, n):
         x = a + i * h
         if i % 2 == 0:
-            total += 2 * f(x)  # Termes pairs
+            total += 2 * f_bis(x)  # Termes pairs
         else:
-            total += 4 * f(x)  # Termes impairs
+            total += 4 * f_bis(x)  # Termes impairs
 
     return (h / 3) * total
 
@@ -41,7 +41,7 @@ def integrale_simpson_numpy(f, a, b, n):
 
     h = (b - a) / n
     x = np.linspace(a, b, n + 1)
-    y = f(x)
+    y = f_bis(x)
 
     # Création des coefficients
     coeffs = np.ones(n + 1)
@@ -56,7 +56,7 @@ a, b = -50, 50
 n = 10
 
 # Calculs et affichage
-resultat_python = integrale_simpson_python(f, a, b, n)
+resultat_python = integrale_simpson_python(f_bis, a, b, n)
 resultat_numpy = integrale_simpson_numpy(f_vectorized, a, b, n)
 
 print(f"Résultat avec Python: {resultat_python:.6f}")
