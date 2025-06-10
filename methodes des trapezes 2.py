@@ -4,14 +4,14 @@ import time
 import matplotlib.pyplot as plt
 
 # définition des coefficients du polynôme à 3 degrès
-coeffs = [2, -3, 0, 5]
+coeffs = [26, 36, 12, 7]
 
 # définition des bornes de l'intervalle
-a = 1
-b = 4
+a = -50
+b = 50
 
 # définition du nombre de segments
-n = 100
+n = 10
 
 # fonction pour évaluer le polynôme avec python basique
 def integrale_trapeze_python(coeffs, a, b, n):
