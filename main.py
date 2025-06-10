@@ -2,10 +2,7 @@ from methode_de_simpson import*
 import numpy as np
 import timeit
 import matplotlib.pyplot as plt
-
-# Définition de la fonction polynomiale du 3ème ordre
-def f(x):
-    return 26 + 36*x + 12*x**2 + 7*x**3  # Exemple: p1=2, p2=3, p3=-1, p4=0.5
+from polynome import f
 
 # Definition des bornes a et b
 a, b = -50, 50  # Bornes
@@ -32,8 +29,8 @@ print(f"Résultat avec NumPy: {resultat_numpy:.6f}")
 
 # Dictionnaire des méthodes (implémentées par mes collègues)
 methodes = {
-    "Rectangles avec Python": integrale_rectancle_python,
-    "Rectangles avec NumPy": integrale_rectancle_numpy,
+    "Rectangles avec Python": integrale_rectangle_python,
+    "Rectangles avec NumPy": integrale_rectangle_numpy,
     "Trapèzes avec Python": integrale_trapeze_python,
     "Trapèzes avec NumPy": integrale_trapeze_python,
     "Trapèzes avec SciPy": integrale_trapeze_scipy,
