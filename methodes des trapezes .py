@@ -114,6 +114,8 @@ for nombre_segments in liste_nombre_segments:
     liste_temps_trapeze_numpy.append(temps_execution_numpy)
     liste_erreurs_trapeze_numpy.append(erreur_numpy)
 
+
+
 #génération du graphique de convergence
 plt.figure()
 plt.plot(liste_nombre_segments, liste_erreurs_trapeze_python, label="Trapèze Python (erreur)")

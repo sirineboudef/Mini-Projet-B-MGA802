@@ -36,8 +36,10 @@ methodes = {
     "Rectangles avec NumPy": integrale_rectancle_numpy,
     "Trapèzes avec Python": integrale_trapeze_python,
     "Trapèzes avec NumPy": integrale_trapeze_python,
+    "Trapèzes avec SciPy": integrale_trapeze_scipy,
     "Simpson avec Python": simpson_python,
-    "Simpson avec NumPy": simpson_numpy
+    "Simpson avec NumPy": simpson_numpy,
+    "Simpson avec SciPy": simpson_scipy
 }
 
 # Initialisation des dictionnaires pour inclure les valeurs d'erreurs et temps
