@@ -32,12 +32,12 @@ print(f"Résultat avec NumPy: {resultat_numpy:.6f}")
 
 # Dictionnaire des méthodes (implémentées par mes collègues)
 methodes = {
-    "Rectangles avec Python": integrale_rectancle_python,
-    "Rectangles avec NumPy": integrale_rectancle_numpy,
+    "Rectangles avec Python": integrale_rectangle_python,
+    "Rectangles avec NumPy": integrale_rectangle_numpy,
     "Trapèzes avec Python": integrale_trapeze_python,
     "Trapèzes avec NumPy": integrale_trapeze_python,
-    "Simpson avec Python": simpson_python,
-    "Simpson avec NumPy": simpson_numpy
+    "Simpson avec Python": integrale_simpson_python,
+    "Simpson avec NumPy": integrale_simpson_numpy
 }
 
 # Initialisation des dictionnaires pour inclure les valeurs d'erreurs et temps
