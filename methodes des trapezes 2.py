@@ -1,7 +1,7 @@
 import numpy as np
 from  Methodes_rectangle import integral_rectangle, integral_analytique
 import time
-
+import matplotlib.pyplot as plt
 
 # définition des coefficients du polynôme à 3 degrès
 coeffs = [2, -3, 0, 5]
@@ -91,6 +91,28 @@ liste_temps_trapeze_numpy = []
 
 # Calcul de la valeur exacte de l'intégrale
 valeur_integrale_exacte = integral_analytique(a, b)
+
+#évaluation
+for nombre_segments in liste_nombre_segments:
+    #méthode trapèze avec python
+    debut_temps_python = time.time()
+    valeur_approchee_python = integrale_trapeze_python(coeffs, a, b, nombre_segments)
+    fin_temps_python = time.time()
+    temps_execution_python = fin_temps_python - debut_temps_python
+    erreur_python = abs(valeur_approchee_python - valeur_integrale_exacte)
+
+    liste_temps_trapeze_python.append(temps_execution_python)
+    liste_erreurs_trapeze_python.append(erreur_python)
+
+    #méthode trapèze avec numpy
+    debut_temps_numpy = time.time()
+    valeur_approchee_numpy = integrale_trapeze_numpy(coeffs, a, b, nombre_segments)
+    fin_temps_numpy = time.time()
+    temps_execution_numpy = fin_temps_numpy - debut_temps_numpy
+    erreur_numpy = abs(valeur_approchee_numpy - valeur_integrale_exacte)
+
+    liste_temps_trapeze_numpy.append(temps_execution_numpy)
+    liste_erreurs_trapeze_numpy.append(erreur_numpy)
 
 
 
