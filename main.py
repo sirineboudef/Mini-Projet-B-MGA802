@@ -4,6 +4,7 @@ import timeit
 import matplotlib.pyplot as plt
 from polynome import f
 from methodes_des_trapezes import*
+import integrale_trapeze_scipy
 from Methode_rectangle_Numpy import*
 from methode_de_simpson import*
 from simpson_scipy import*
