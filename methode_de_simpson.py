@@ -18,7 +18,6 @@ def integrale_simpson_python(f, a, b, n):
 
 import numpy as np
 
-
 def integrale_simpson_numpy(f, a, b, n):
 
     if n % 2 != 0:
