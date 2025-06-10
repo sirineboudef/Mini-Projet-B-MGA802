@@ -63,3 +63,6 @@ print(f"Résultat avec Python: {resultat_python:.6f}")
 print(f"Résultat avec NumPy: {resultat_numpy:.6f}")
 
 # 2eme question
+"""Comparez la précision (erreur) et le temps d’exécution de la méthode de Simpson avec
+ ceux de la méthode des rectangles et la méthode des trapèzes pour un nombre de seg
+ments donné dans les cas de Python et NumPy."""
