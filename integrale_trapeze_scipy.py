@@ -16,4 +16,4 @@ a, b = -50, 50  # bornes de l'intégrale
 n = 11  # nombre de points pour les méthodes
 
 # Test de la fonction
-print(integrate_trapezoid_built_in(a, b, p1, p2, p3, p4, n))
+# print(integrate_trapezoid_built_in(a, b, p1, p2, p3, p4, n))

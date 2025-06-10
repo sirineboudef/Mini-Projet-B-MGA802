@@ -52,7 +52,7 @@ def comparer_methodes(coeffs, a, b, n):
     resultat_trapeze_numpy = integrale_trapeze_numpy(coeffs, a, b, n)
     fin_trapeze_numpy = time.time()
 
-    # Calcul du temps d'execution de la methodes trapèzes avec numpy
+    # Calcul du temps d'execution de la methodes trapèzes avec scipy
     debut_trapeze_scipy = time.time()
     resultat_trapeze_scipy = integrate_trapezoid_built_in(a, b,coeffs[0],coeffs[1],coeffs[2],coeffs[3] ,n)
     fin_trapeze_scipy = time.time()
@@ -81,7 +81,7 @@ def comparer_methodes(coeffs, a, b, n):
     print("\n--- Comparaison des méthodes ---")
     print(f"Trapèzes (python de base)       : Résultat = {resultat_trapeze_python:.6f}, Erreur = {erreur_trapeze_python:.2e}, Temps = {fin_trapeze_python - debut_trapeze_python:.6f} s")
     print(f"Trapèzes (numpy)                : Résultat = {resultat_trapeze_numpy:.6f}, Erreur = {erreur_trapeze_numpy:.2e}, Temps = {fin_trapeze_numpy - debut_trapeze_numpy:.6f} s")
-    print(f"Trapèzes (numpy)                : Résultat = {resultat_trapeze_scipy:.6f}, Erreur = {erreur_trapeze_scipy:.2e}, Temps = {fin_trapeze_scipy - debut_trapeze_scipy:.6f} s")
+    print(f"Trapèzes (scipy)                : Résultat = {resultat_trapeze_scipy:.6f}, Erreur = {erreur_trapeze_scipy:.2e}, Temps = {fin_trapeze_scipy - debut_trapeze_scipy:.6f} s")
     print(f"Rectangles (python de base)     : Résultat = {resultat_rectangle_python:.6f}, Erreur = {erreur_rectangle_python:.2e}, Temps = {fin_rectangle_python - debut_rectangle_python:.6f} s")
     print(f"Rectangles (numpy)              : Résultat = {resultat_rectangle_numpy:.6f}, Erreur = {erreur_rectangle_numpy:.2e}, Temps = {fin_rectangle_numpy - debut_rectangle_numpy:.6f} s")
     print(f"Valeur exacte                   : {resultat_exact:.6f}")
