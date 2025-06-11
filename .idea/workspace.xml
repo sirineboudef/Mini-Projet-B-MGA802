@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08a8da23-4a39-4852-a68a-e9b76c7d26a8" name="Changes" comment="ajout de trapeze scipy dans methodes_des_trapezes.py">
+    <list default="true" id="08a8da23-4a39-4852-a68a-e9b76c7d26a8" name="Changes" comment="Correction bug trapeze scipy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methode_de_simpson.py" beforeDir="false" afterPath="$PROJECT_DIR$/methode_de_simpson.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methode_trapeze_scipy.py" beforeDir="false" afterPath="$PROJECT_DIR$/methode_trapeze_scipy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodes_des_trapezes.py" beforeDir="false" afterPath="$PROJECT_DIR$/methodes_des_trapezes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +65,7 @@
     "Python.Methode_rectangle.executor": "Run",
     "Python.main.executor": "Run",
     "Python.methode_de_simpson.executor": "Run",
+    "Python.methode_simpson_scipy.executor": "Run",
     "Python.methode_trapeze.executor": "Run",
     "Python.methode_trapeze_scipy.executor": "Run",
     "Python.methodes_des_trapezes.executor": "Run",
@@ -136,7 +138,31 @@
       <option name="project" value="LOCAL" />
       <updated>1749601213841</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ajout de l'affichage de Simpson SciPy sur graphique">
+      <option name="closed" value="true" />
+      <created>1749603171062</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1749603171062</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Correction bug simpson scipy">
+      <option name="closed" value="true" />
+      <created>1749604653930</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1749604653930</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Correction bug trapeze scipy">
+      <option name="closed" value="true" />
+      <created>1749604898765</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1749604898765</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +183,9 @@
     <MESSAGE value="adaptation nom des fichiers" />
     <MESSAGE value="adaptation nom des fonctions" />
     <MESSAGE value="ajout de trapeze scipy dans methodes_des_trapezes.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout de trapeze scipy dans methodes_des_trapezes.py" />
+    <MESSAGE value="ajout de l'affichage de Simpson SciPy sur graphique" />
+    <MESSAGE value="Correction bug simpson scipy" />
+    <MESSAGE value="Correction bug trapeze scipy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction bug trapeze scipy" />
   </component>
 </project>
