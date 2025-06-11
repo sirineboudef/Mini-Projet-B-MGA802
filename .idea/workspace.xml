@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08a8da23-4a39-4852-a68a-e9b76c7d26a8" name="Changes" comment="Correction bug trapeze scipy">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methode_trapeze_scipy.py" beforeDir="false" afterPath="$PROJECT_DIR$/methode_trapeze_scipy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodes_des_trapezes.py" beforeDir="false" afterPath="$PROJECT_DIR$/methodes_des_trapezes.py" afterDir="false" />
+    <list default="true" id="08a8da23-4a39-4852-a68a-e9b76c7d26a8" name="Changes" comment="Affichage des performances méthode trapèze dans methode_trapeze_scipy.py">
+      <change beforePath="$PROJECT_DIR$/methode_de_simpson.py" beforeDir="false" afterPath="$PROJECT_DIR$/methode_de_simpson.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methode_simpson_scipy.py" beforeDir="false" afterPath="$PROJECT_DIR$/methode_simpson_scipy.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749604898765</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Affichage des performances méthode trapèze dans methode_trapeze_scipy.py">
+      <option name="closed" value="true" />
+      <created>1749609167511</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1749609167511</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,6 +193,7 @@
     <MESSAGE value="ajout de l'affichage de Simpson SciPy sur graphique" />
     <MESSAGE value="Correction bug simpson scipy" />
     <MESSAGE value="Correction bug trapeze scipy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction bug trapeze scipy" />
+    <MESSAGE value="Affichage des performances méthode trapèze dans methode_trapeze_scipy.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Affichage des performances méthode trapèze dans methode_trapeze_scipy.py" />
   </component>
 </project>
