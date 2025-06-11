@@ -47,4 +47,9 @@ python main.py
 
 Ce script regroupe l’exécution de toutes les méthodes, compare les résultats, et génère les visualisations nécessaires à l’analyse.
 
+Ce projet a été réalisé dans le cadre du cours MGA802 par :
+- Linda Ghazouani
+- Syrine Boudef
+- Paulin Muhlhoff
+- Wilson David Parra Oliveros
 
