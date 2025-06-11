@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08a8da23-4a39-4852-a68a-e9b76c7d26a8" name="Changes" comment="adaptation nom des fonctions">
+    <list default="true" id="08a8da23-4a39-4852-a68a-e9b76c7d26a8" name="Changes" comment="ajout de trapeze scipy dans methodes_des_trapezes.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methode_trapeze.py" beforeDir="false" afterPath="$PROJECT_DIR$/methode_trapeze.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodes_des_trapezes.py" beforeDir="false" afterPath="$PROJECT_DIR$/methodes_des_trapezes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methode_de_simpson.py" beforeDir="false" afterPath="$PROJECT_DIR$/methode_de_simpson.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +63,7 @@
     "Python.Methode_preprogrammee.executor": "Run",
     "Python.Methode_rectangle.executor": "Run",
     "Python.main.executor": "Run",
+    "Python.methode_de_simpson.executor": "Run",
     "Python.methode_trapeze.executor": "Run",
     "Python.methode_trapeze_scipy.executor": "Run",
     "Python.methodes_des_trapezes.executor": "Run",
@@ -128,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749600138876</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ajout de trapeze scipy dans methodes_des_trapezes.py">
+      <option name="closed" value="true" />
+      <created>1749601213841</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1749601213841</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,6 +156,7 @@
     <MESSAGE value="résolution bug" />
     <MESSAGE value="adaptation nom des fichiers" />
     <MESSAGE value="adaptation nom des fonctions" />
-    <option name="LAST_COMMIT_MESSAGE" value="adaptation nom des fonctions" />
+    <MESSAGE value="ajout de trapeze scipy dans methodes_des_trapezes.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout de trapeze scipy dans methodes_des_trapezes.py" />
   </component>
 </project>
