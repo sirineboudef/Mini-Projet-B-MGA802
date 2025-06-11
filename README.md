@@ -23,7 +23,15 @@ Ce projet a pour but de comparer plusieurs méthodes d’intégration numérique
 ## Comment exécuter
 
 ### Pour tester **une seule méthode**
-Tu peux exécuter n’importe quel module (`methode_rectangle_python.py`, `methode_trapeze.py`, etc.) pour afficher :
+Tu peux tester chaque méthode séparément en lançant l’un des fichiers suivants, selon la méthode que tu veux tester :
+
+```bash
+python methode_rectangle_python.py
+python methode_trapeze.py
+python methode_de_simpson.py
+```
+
+Chaque script va afficher :
 
 - La valeur approchée
 - L’erreur absolue
@@ -31,7 +39,12 @@ Tu peux exécuter n’importe quel module (`methode_rectangle_python.py`, `metho
 - La convergence (pour certains modules)
 
 ### Pour tester **tout le projet d’un coup**
-Lance simplement :
+Pour exécuter une comparaison complète de toutes les méthodes avec analyse d’erreur et graphiques :
 
 ```bash
 python main.py
+```
+
+Ce script regroupe l’exécution de toutes les méthodes, compare les résultats, et génère les visualisations nécessaires à l’analyse.
+
+
