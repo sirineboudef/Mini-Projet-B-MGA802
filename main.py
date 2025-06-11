@@ -94,7 +94,7 @@ for n in n_values:
 
     err_rect_np = abs(I_rect_np - I_exact)
     err_simp_np = abs(I_simp_np - I_exact)
-    err_trap_np = abs(I_simp_np - I_exact)
+    err_trap_np = abs(I_trap_np - I_exact)
 
     errors_rectangle_numpy.append(err_rect_np)
     errors_simpson_numpy.append(err_simp_np)
