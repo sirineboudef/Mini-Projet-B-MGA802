@@ -23,7 +23,7 @@ Ce projet a pour but de comparer plusieurs méthodes d’intégration numérique
 ## Comment exécuter
 
 ### Pour tester **une seule méthode**
-Tu peux tester chaque méthode séparément en lançant l’un des fichiers suivants, selon la méthode que tu veux tester :
+Pour tester chaque méthode séparément, tu peux lançer l’un des fichiers suivants, selon la méthode que tu veux tester :
 
 ```bash
 python methode_rectangle_python.py
@@ -39,7 +39,7 @@ Chaque script va afficher :
 - La convergence (pour certains modules)
 
 ### Pour tester **tout le projet d’un coup**
-Pour exécuter une comparaison complète de toutes les méthodes avec analyse d’erreur et graphiques :
+Pour exécuter une comparaison complète de toutes les méthodes avec analyse d’erreur et graphiques fait la commande suivante :
 
 ```bash
 python main.py
