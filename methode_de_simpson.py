@@ -1,4 +1,3 @@
-import numpy as np
 import matplotlib.pyplot as plt
 import time
 import pandas as pd
@@ -40,6 +39,7 @@ def integrale_simpson_numpy(a, b, p1, p2, p3, p4, n=10):
     coeffs[1:-1:2] = 4
     coeffs[2:-1:2] = 2
     return (h / 3) * np.sum(coeffs * y)
+
 
 # ========= BLOC PRINCIPAL ========= #
 if __name__ == "__main__":
@@ -176,3 +176,4 @@ if __name__ == "__main__":
     plt.legend()
     plt.tight_layout()
     plt.show()
+

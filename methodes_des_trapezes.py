@@ -3,6 +3,7 @@ from  methode_rectangle_python import*
 import time
 import matplotlib.pyplot as plt
 from Methode_rectangle_Numpy import*
+
 # définition des coefficients du polynôme à 3 degrès
 coeffs = [26, 36, 12, 7]
 
@@ -111,7 +112,6 @@ for nombre_segments in liste_nombre_segments:
 
     liste_temps_trapeze_numpy.append(temps_execution_numpy)
     liste_erreurs_trapeze_numpy.append(erreur_numpy)
-
 
 
 #génération du graphique de convergence

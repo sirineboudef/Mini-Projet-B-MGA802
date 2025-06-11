@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from methode_analytique import integrale_analytique
 from methode_rectangle_python import integrale_rectangle_python
 from Methode_rectangle_Numpy import integrale_rectangle_numpy
+from methode_trapeze_scipy import integrale_trapeze_scipy
 
 # Fonction pour calculer l'integrale avec la méthode du trapèze (Python de base)
 def integrale_trapeze_python(a, b, p1, p2, p3, p4, n=10):
@@ -23,6 +24,7 @@ def integrale_trapeze_numpy(a, b, p1, p2, p3, p4, n=10):
     x = np.linspace(a, b, n + 1)
     y = p1 + p2 * x + p3 * x**2 + p4 * x**3
     return h * (np.sum(y) - 0.5 * (y[0] + y[-1]))
+
 
 # Définition des coefficients et bornes
 p1, p2, p3, p4 = 26, 36, 12, 7
@@ -95,7 +97,7 @@ if __name__ == "__main__":
     plt.tight_layout()
     plt.show()
 
-    # === Temps d'exécution ===
+    #  Temps d'exécution 
     times_rect_python = []
     times_trap_python = []
     times_rect_numpy = []
@@ -139,3 +141,4 @@ if __name__ == "__main__":
     plt.legend()
     plt.tight_layout()
     plt.show()
+
