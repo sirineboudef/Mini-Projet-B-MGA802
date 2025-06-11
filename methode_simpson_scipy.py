@@ -1,6 +1,7 @@
 from scipy.integrate import simpson
 from polynome import f
 import numpy as np
+
 def integrale_simpson_scipy(a: float, b: float, p1: float, p2: float, p3: float, p4: float, n: int = 10):
     """Intégration numérique par la méthode de Simpson sur n segments. Version pré-programmée SciPy"""
     x = np.linspace(a, b, num=n)

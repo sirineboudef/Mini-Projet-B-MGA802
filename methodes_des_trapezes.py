@@ -3,6 +3,8 @@ from  methode_rectangle_python import*
 import time
 import matplotlib.pyplot as plt
 from Methode_rectangle_Numpy import*
+from methode_trapeze_scipy import*
+
 # définition des coefficients du polynôme à 3 degrès
 coeffs = [26, 36, 12, 7]
 

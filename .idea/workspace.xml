@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08a8da23-4a39-4852-a68a-e9b76c7d26a8" name="Changes" comment="Ajout méthode trapezoid">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="08a8da23-4a39-4852-a68a-e9b76c7d26a8" name="Changes" comment="adaptation nom des fichiers">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simpson_scipy.py" beforeDir="false" afterPath="$PROJECT_DIR$/simpson_scipy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methode_trapeze_scipy.py" beforeDir="false" afterPath="$PROJECT_DIR$/methode_trapeze_scipy.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749596676912</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adaptation nom des fichiers">
+      <option name="closed" value="true" />
+      <created>1749599812119</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1749599812119</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +135,7 @@
     <MESSAGE value="Initial commit: creation branche Paulin" />
     <MESSAGE value="Ajout méthode trapezoid" />
     <MESSAGE value="résolution bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="résolution bug" />
+    <MESSAGE value="adaptation nom des fichiers" />
+    <option name="LAST_COMMIT_MESSAGE" value="adaptation nom des fichiers" />
   </component>
 </project>
