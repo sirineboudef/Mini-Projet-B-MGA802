@@ -181,3 +181,30 @@ plt.grid(True, linestyle='--')
 plt.legend()
 plt.tight_layout()
 plt.show()
+
+# Creation d'un Histogramme des erreurs absolues pour chaque méthode pour comparaison de precision
+import matplotlib.pyplot as plt
+
+# Recuperation des resultats (nom, valeur approximative, erreur, durée)
+method_names = [r[0] for r in results]
+erreurs = [r[2] for r in results]
+
+# Couleurs differente pour chaque méthode
+colors = plt.cm.tab10.colors[:len(method_names)]  # maximum de 10 couleurs distinctes
+
+# Tracer l’histogramme
+plt.figure(figsize=(10, 6))
+barres = plt.bar(method_names, erreurs, color=colors)
+
+# Ajout de la valeur de l’erreur sur chaque barre
+for bar, err in zip(barres, erreurs):
+    plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height(),
+             f"{err:.2e}", ha='center', va='bottom', fontsize=10)
+
+plt.ylabel("Erreur absolue")
+plt.title("Comparaison des méthodes – Erreur absolue")
+plt.xticks(rotation=30)
+plt.grid(True, axis='y', linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.show()
+
