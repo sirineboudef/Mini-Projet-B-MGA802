@@ -17,6 +17,7 @@ I_exact = integrale_analytique(a, b, p1, p2, p3, p4)
 # Méthodes
 from methode_rectangle_python import integrale_rectangle_python
 from Methode_rectangle_Numpy import integrale_rectangle_numpy
+from methode_trapeze_scipy import integrale_trapeze_scipy
 
 # Fonction pour calculer l'integrale avec la methode du trapeze avec python de base
 def integrale_trapeze_python(a, b, p1, p2, p3, p4, n=10):
@@ -34,6 +35,8 @@ def integrale_trapeze_numpy(a, b, p1, p2, p3, p4, n=10):
     x = np.linspace(a, b, n + 1)
     y = p1 + p2 * x + p3 * x**2 + p4 * x**3
     return h * (np.sum(y) - 0.5 * (y[0] + y[-1]))
+
+# Fonction pour calculer l'intégrale avec la méthode des trapezes avec SciPy déjà dans le module 'methode_trapeze_scipy'
 
 # 2eme question: comparaison des erreurs et temps d'execution entre les deux methode et deux version
 methods = [

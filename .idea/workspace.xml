@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08a8da23-4a39-4852-a68a-e9b76c7d26a8" name="Changes" comment="adaptation nom des fichiers">
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methode_trapeze_scipy.py" beforeDir="false" afterPath="$PROJECT_DIR$/methode_trapeze_scipy.py" afterDir="false" />
+    <list default="true" id="08a8da23-4a39-4852-a68a-e9b76c7d26a8" name="Changes" comment="adaptation nom des fonctions">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methode_trapeze.py" beforeDir="false" afterPath="$PROJECT_DIR$/methode_trapeze.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodes_des_trapezes.py" beforeDir="false" afterPath="$PROJECT_DIR$/methodes_des_trapezes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +65,8 @@
     "Python.Methode_rectangle.executor": "Run",
     "Python.main.executor": "Run",
     "Python.methode_trapeze.executor": "Run",
+    "Python.methode_trapeze_scipy.executor": "Run",
+    "Python.methodes_des_trapezes.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "PaulinV3",
@@ -117,7 +120,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749599812119</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="adaptation nom des fonctions">
+      <option name="closed" value="true" />
+      <created>1749600138876</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1749600138876</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,6 +147,7 @@
     <MESSAGE value="Ajout méthode trapezoid" />
     <MESSAGE value="résolution bug" />
     <MESSAGE value="adaptation nom des fichiers" />
-    <option name="LAST_COMMIT_MESSAGE" value="adaptation nom des fichiers" />
+    <MESSAGE value="adaptation nom des fonctions" />
+    <option name="LAST_COMMIT_MESSAGE" value="adaptation nom des fonctions" />
   </component>
 </project>
