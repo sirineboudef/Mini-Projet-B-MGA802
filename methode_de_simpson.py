@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import time
 import pandas as pd
+import numpy as np
 from methode_rectangle_python import integrale_rectangle_python
 from Methode_rectangle_Numpy import integrale_rectangle_numpy
 from methode_analytique import integrale_analytique

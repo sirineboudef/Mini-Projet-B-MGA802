@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from methode_analytique import integrale_analytique
 from methode_rectangle_python import integrale_rectangle_python
 from Methode_rectangle_Numpy import integrale_rectangle_numpy
-from methode_trapeze_scipy import integrale_trapeze_scipy
+
 
 # Fonction pour calculer l'integrale avec la méthode du trapèze (Python de base)
 def integrale_trapeze_python(a, b, p1, p2, p3, p4, n=10):

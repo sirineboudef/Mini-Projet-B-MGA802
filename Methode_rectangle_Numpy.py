@@ -2,6 +2,7 @@ import numpy as np
 from methode_analytique import integrale_analytique
 import timeit
 from polynome import *
+import numpy as np
 
 # Intégration par rectangles centrés (vectorisée)
 def integrale_rectangle_numpy(a: float, b: float, p1: float, p2: float, p3: float, p4: float, n: int = 10) -> float:
