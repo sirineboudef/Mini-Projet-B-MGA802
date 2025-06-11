@@ -1,6 +1,5 @@
 import timeit
-from polynome import*
-
+from polynome import *
 
 def integral_analytique(a: float, b: float, p1: float, p2: float, p3: float, p4: float):
     """Intégrale analytique de f(x) entre a et b"""
@@ -37,19 +36,20 @@ def mesurer_temps_execution(a, b, p1, p2, p3, p4, n):
     temps = timeit.timeit(lambda: integrale_rectangle_python(a, b, p1, p2, p3, p4, n), number=1)
     print(f"\nTemps d'exécution pour n={n} : {temps:.6f} secondes")
 
+# === Code principal protégé ===
+if __name__ == "__main__":
+    # Valeurs fixes pour le polynôme et les bornes d'intégration
+    p1, p2, p3, p4 = 26, 36, 12, 7
+    a, b = -50, 50
+    n = 10
 
-# valeur fixe pour le coefficient du polynome et limites d'intégration
-p1, p2, p3, p4 = 26, 36, 12, 7  # coefficients du polynôme
-a, b = -50, 50  # bornes de l'intégrale
-n = 10  # nombre de segments pour la méthode des rectangles
+    exacte = integral_analytique(a, b, p1, p2, p3, p4)
+    approx = integrale_rectangle_python(a, b, p1, p2, p3, p4, n)
+    err = abs(exacte - approx)
 
-exacte = integral_analytique(a, b, p1, p2, p3, p4)
-approx = integrale_rectangle_python(a, b, p1, p2, p3, p4, n)
-err = abs(exacte - approx)
+    print(f"Intégrale analytique   : {exacte}")
+    print(f"Intégrale numérique    : {approx}")
+    print(f"Erreur absolue (n={n}): {err}")
 
-print(f"Intégrale analytique   : {exacte}")
-print(f"Intégrale numérique    : {approx}")
-print(f"Erreur absolue (n={n}): {err}")
-
-tester_convergence(a, b, p1, p2, p3, p4)
-mesurer_temps_execution(a, b, p1, p2, p3, p4, n)
+    tester_convergence(a, b, p1, p2, p3, p4)
+    mesurer_temps_execution(a, b, p1, p2, p3, p4, n)

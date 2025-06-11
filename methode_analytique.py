@@ -18,5 +18,6 @@ a, b = -50, 50
 n = 10
 
 # Évaluation de l'intégrale exacte
-I_exact = integrale_analytique(a, b, p1, p2, p3, p4)
-print(f"I_exact = {I_exact}")
+if __name__ == "__main__":
+    I_exact = integrale_analytique(a, b, p1, p2, p3, p4)
+    print(f"I_exact = {I_exact}")

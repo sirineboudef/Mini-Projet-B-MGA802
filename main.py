@@ -33,7 +33,7 @@ methods = [
 
 I_exact = integrale_analytique(a, b, p1, p2, p3, p4)
 results = []
-
+print("=== Resultats de toutes les methodes ===")
 # Boucle pour calculer les resultats de toutes les methodes
 for name, method in methods:
     start = time.perf_counter()
@@ -174,8 +174,6 @@ plt.plot(n_values, times_simpson_python, marker='s', label="Simpson (Python)")
 plt.plot(n_values, times_simpson_numpy, marker='s', linestyle='--', label="Simpson (NumPy)")
 plt.plot(n_values, times_trapeze_python, marker='x', label="Trapeze (Python)")
 plt.plot(n_values, times_trapeze_numpy, marker='x', linestyle='--', label="Trapeze (NumPy)")
-
-
 plt.xlabel("Nombre de segments (n)")
 plt.ylabel("Temps d'exécution (secondes)")
 plt.title("Temps de calcul des méthodes numériques (Rectangle & Simpson)")
